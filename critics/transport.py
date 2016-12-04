@@ -16,11 +16,11 @@ _ = language.ugettext
 
 def post2slack(reviews, slack_url, channel):
     emoji = {
-        1: ':feelsgood:',
-        2: ':finnadie:',
-        3: ':hurtrealbad:',
-        4: ':suspect:',
-        5: ':godmode:',
+        1: ':disappointed:',
+        2: ':no_mouth:',
+        3: ':simple_smile:',
+        4: ':smile:',
+        5: ':wink_wink:',
     }
     colors = {
         1: '#CC2525',
@@ -69,7 +69,7 @@ def post2slack(reviews, slack_url, channel):
             "mrkdwn_in": ["text"],
         } for review in reviews],
         'text': text,
-        'username': _('Critic'),
+        'username': _("Careem Review Bot" + str(average_rating)),
         "icon_emoji": emoji[average_rating],
     }
     if channel:

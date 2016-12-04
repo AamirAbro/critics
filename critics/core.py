@@ -67,7 +67,8 @@ class CriticApp(tornado.web.Application):
 
         if new_reviews:
             last_review.set_to_current_time()
-            self.send_messages(new_reviews, platform, notify, app_id)
+            for review in new_reviews:
+                self.send_messages([review], platform, notify, app_id)
 
     def get_channel(self, platform, app_id):
         platform_channels = self.channels.get(platform, {})
