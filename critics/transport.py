@@ -18,7 +18,7 @@ def post2slack(reviews, slack_url, channel):
     emoji = {
         1: ':disappointed:',
         2: ':no_mouth:',
-        3: ':simple_smile:',
+        3: ':neutral_face:',
         4: ':smile:',
         5: ':wink_wink:',
     }
